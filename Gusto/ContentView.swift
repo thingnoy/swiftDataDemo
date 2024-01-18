@@ -20,64 +20,28 @@ struct ContentView: View {
         NavigationStack {
 
             List {
-                NavigationLink("Go to detail A", value: "Show AAAA")
-                NavigationLink("Go to B", value: "Show BBB")
-            }
-
-            VStack {
-
-                Text("Gusto Restaurant")
-
-                Spacer()
-
-                Button("Wok this Way") {
-                    addItem(0)
+                ForEach (items) { item in
+                    NavigationLink(item.Name, value: item)
                 }
-
-                Button("Thyme Square") {
-                    addItem(1)
-                }
-                Button("Pasta la Vista") {
-                    addItem(2)
-                }
-                Button("Life of Pie") {
-                    addItem(3)
-                }
-                Button("Lord of the Wings") {
-                    addItem(4)
-                }
-
-
-                List {
-                    ForEach (items) { item in
-                        HStack {
-                            Text(item.Name)
-                            Spacer()
-                            Text("\(item.PriceRaing)")
-                            Text("\(item.QtyRating)")
-                            Text("\(item.SpeedRating)")
-
-                            Button(action: {
-                                NavigationLink("Go to B", value: "Show BBB")
-                            }, label: {
-                                Image(systemName: "pencil")
-                            })
-                        }
-                    }
-
-                    .onDelete { indexes in
-                        for index in indexes {
-                            deleteItem(items[index])
-                        }
+                .onDelete { indexes in
+                    for index in indexes {
+                        deleteItem(items[index])
                     }
                 }
             }
-            .padding()
 
-            .navigationDestination(for: String.self) { textValue in
-                EditView()
+            .navigationDestination(for: Restaurant.self) { item in
+                EditView(item: item)
             }
             .navigationTitle("Gusto Restaurant")
+            .toolbar {
+                Button(action: {
+                    let item = Restaurant(Name: "??", PriceRaing: 0, QtyRating: 0, SpeedRating: 0)
+                    context.insert(item)
+
+                }, label: {
+                    Image(systemName: "plus")
+                })            }
         }
 
 
