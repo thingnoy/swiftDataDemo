@@ -10,6 +10,7 @@ import Foundation
 
 @Model
 class Restaurant {
+    @Attribute(.unique)
     var Name: String
     var PriceRaing: Int
     var QtyRating: Int

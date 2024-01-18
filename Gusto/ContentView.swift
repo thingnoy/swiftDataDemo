@@ -30,18 +30,19 @@ struct ContentView: View {
                 }
             }
 
+
+            .navigationTitle("Gusto Restaurant")
+            .toolbar {
+                ToolbarItem() {
+                    NavigationLink(
+                        destination: EditView(item: Restaurant(Name: "??", PriceRaing: 0, QtyRating: 0, SpeedRating: 0), isAdd: true)) {
+                            Image(systemName: "plus")
+                        }
+                }
+            }
             .navigationDestination(for: Restaurant.self) { item in
                 EditView(item: item)
             }
-            .navigationTitle("Gusto Restaurant")
-            .toolbar {
-                Button(action: {
-                    let item = Restaurant(Name: "??", PriceRaing: 0, QtyRating: 0, SpeedRating: 0)
-                    context.insert(item)
-
-                }, label: {
-                    Image(systemName: "plus")
-                })            }
         }
 
 

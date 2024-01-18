@@ -9,7 +9,14 @@ import SwiftUI
 import SwiftData
 
 struct EditView: View {
+    @Environment(\.presentationMode) 
+    var presentationMode: Binding<PresentationMode>
+
+    @Environment(\.modelContext)
+    private var context
+
     @Bindable var item: Restaurant
+    var isAdd: Bool = false
 
     var body: some View {
         Text("Edit Detail")
@@ -43,7 +50,10 @@ struct EditView: View {
             }
 
             Button(action: {
-                print("d")
+                if isAdd {
+                    context.insert(item)
+                    presentationMode.wrappedValue.dismiss()
+                }
             }, label: {
                 Image(systemName: "pencil")
 
