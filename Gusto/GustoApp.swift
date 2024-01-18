@@ -13,5 +13,6 @@ struct GustoApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: Restaurant.self)
     }
 }

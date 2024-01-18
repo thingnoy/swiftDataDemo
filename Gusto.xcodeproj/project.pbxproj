@@ -11,6 +11,8 @@
 		5231F73E2B58BC21006C3021 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5231F73D2B58BC21006C3021 /* ContentView.swift */; };
 		5231F7402B58BC23006C3021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5231F73F2B58BC23006C3021 /* Assets.xcassets */; };
 		5231F7432B58BC23006C3021 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5231F7422B58BC23006C3021 /* Preview Assets.xcassets */; };
+		5231F74A2B58BCC7006C3021 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5231F7492B58BCC7006C3021 /* Restaurant.swift */; };
+		5231F74E2B58C8A2006C3021 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5231F74D2B58C8A2006C3021 /* EditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		5231F73D2B58BC21006C3021 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5231F73F2B58BC23006C3021 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5231F7422B58BC23006C3021 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5231F7492B58BCC7006C3021 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		5231F74D2B58C8A2006C3021 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +55,12 @@
 		5231F73A2B58BC21006C3021 /* Gusto */ = {
 			isa = PBXGroup;
 			children = (
+				5231F7492B58BCC7006C3021 /* Restaurant.swift */,
 				5231F73B2B58BC21006C3021 /* GustoApp.swift */,
 				5231F73D2B58BC21006C3021 /* ContentView.swift */,
 				5231F73F2B58BC23006C3021 /* Assets.xcassets */,
 				5231F7412B58BC23006C3021 /* Preview Content */,
+				5231F74D2B58C8A2006C3021 /* EditView.swift */,
 			);
 			path = Gusto;
 			sourceTree = "<group>";
@@ -139,6 +145,8 @@
 			files = (
 				5231F73E2B58BC21006C3021 /* ContentView.swift in Sources */,
 				5231F73C2B58BC21006C3021 /* GustoApp.swift in Sources */,
+				5231F74E2B58C8A2006C3021 /* EditView.swift in Sources */,
+				5231F74A2B58BCC7006C3021 /* Restaurant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
