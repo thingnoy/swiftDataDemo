@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct EditView: View {
-    @Environment(\.presentationMode) 
+    @Environment(\.presentationMode)
     var presentationMode: Binding<PresentationMode>
 
     @Environment(\.modelContext)
@@ -19,7 +19,8 @@ struct EditView: View {
     var isAdd: Bool = false
 
     var body: some View {
-        Text("Edit Detail")
+        Text(isAdd ? "Add" : "Edit")
+        Text("\(item.Name)")
 
         VStack {
 
@@ -49,15 +50,32 @@ struct EditView: View {
                 }
             }
 
-            Button(action: {
-                if isAdd {
-                    context.insert(item)
-                    presentationMode.wrappedValue.dismiss()
-                }
-            }, label: {
-                Image(systemName: "pencil")
+            HStack {
+                Button(action: {
+                    if isAdd {
+                        context.insert(item)
+                    }
 
-            })
+                    presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Image(systemName: isAdd ? "plus" : "pencil")
+
+                })
+                .fontWeight(.bold)
+                .font(.title)
+                .padding()
+                .background(Color.purple)
+                .cornerRadius(40)
+                .foregroundColor(.white)
+                .padding(6)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 40)
+                        .stroke(Color.purple, lineWidth: 5)
+                )
+
+            }
+            .padding()
+
         }
         .padding()
     }

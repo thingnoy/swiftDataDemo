@@ -35,7 +35,7 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItem() {
                     NavigationLink(
-                        destination: EditView(item: Restaurant(Name: "??", PriceRaing: 0, QtyRating: 0, SpeedRating: 0), isAdd: true)) {
+                        destination: EditView(item: Restaurant(Name: "", PriceRaing: 0, QtyRating: 0, SpeedRating: 0), isAdd: true)) {
                             Image(systemName: "plus")
                         }
                 }
